@@ -20,4 +20,13 @@ public class FuncionarioHorista extends Funcionario{
     public void setQtdeHorTrab(int qht){
         qtdHorTrab = qht;
     }
+    
+    public double calcGratificacao(){
+        return(calcSalBruto()*0.075);
+    }
+    
+    @Override
+    public double calcSalLiquido(){
+        return(super.calcSalLiquido() + calcGratificacao());
+    }
 }
